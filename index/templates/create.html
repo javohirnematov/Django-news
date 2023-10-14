@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+
+{% block title %}Новая статья{% endblock %}
+
+{% block content %}
+    <h1>Новая статья</h1>
+    <hr>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.product_name }}<br>
+        {{ form.product_category }}<br>
+        {{ form.product_des }}<br>
+        {{ form.product_photo }}<br>
+        <span>{{ error }}</span>
+
+      <button class="btn btn-success" type="submit">Добавить статью</button>
+    </form>
+{% endblock %}
+
+{% block tools %}{% endblock %}
+
+{% block search %}{% endblock %}

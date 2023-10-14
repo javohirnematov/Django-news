@@ -1,0 +1,13 @@
+{% extends 'layout.html' %}
+
+{% block title %}Все статьи по выбранной категории{% endblock %}
+
+{% block content %}
+    <h1>Все статьи по выбранной категории</h1>
+    <hr>
+    {% for i in products %}
+        <a href="/product/{{ i.id }}">{{ i.product_name }}</a>
+    {% endfor %}
+{% endblock %}
+{% block tools %}{% endblock %}
+{% block search %}{% endblock %}

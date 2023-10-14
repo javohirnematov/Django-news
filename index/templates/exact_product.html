@@ -1,0 +1,24 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block title %}Статья{% endblock %}
+
+{% block content %}
+
+    <h1>{{ product.product_name }}</h1>
+    <hr>
+    Категория: {{ product.product_category }}<br>
+    {{ product.product_des }}<br>
+    <br>
+    <aside>
+        <img src="/{{ product.product_photo }}" alt="{{ product.product_name }}" />
+    </aside>
+{% endblock %}
+{% block tools %}
+    <hr>
+    <a href="{% url 'news-delete' product.id %}" class="btn btn-danger">Удалить</a>
+    <a href="{% url 'news-update' product.id %}" class="btn btn-info">Редактировать</a>
+{% endblock %}
+
+{% block search %}{% endblock %}
+
